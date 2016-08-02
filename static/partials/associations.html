@@ -1,0 +1,18 @@
+<div ng-controller = "assocController">
+	Name: <select ng-model = "assoc.player" ng-options= "player.name for player in players"></select>
+    Team:<select ng-model = "assoc.team" ng-options= "team.name for team in teams"></select>
+	
+	<button ng-click="addAssoc()"> Add Association </button>
+	<table>
+	<tr>
+		<th> Name </th>
+		<th> Team </th>
+		<th> Action: </th>
+	</tr>
+	<tr ng-repeat = "assoc in teamAssoc">
+		<td> {{ assoc.player.name }} </td>
+		<td> {{ assoc.team.name }} </td>
+		<td> <button ng-click="removeAssoc(assoc)"> Remove Assoc </button> </td>
+	</tr>
+	</table>
+<div>
